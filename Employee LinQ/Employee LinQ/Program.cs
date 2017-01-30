@@ -27,17 +27,17 @@ namespace Employee_LinQ
 
         static void Main(string[] args)
         {
-            List<Employee> employee = new List<Employee>(5);
+            List<Employee> employees = new List<Employee>(5);
 
-            employee.Add(new Employee(1, 30000, 2));
-            employee.Add(new Employee(2, 20000, 1));
-            employee.Add(new Employee(3, 5000, 3));
-            employee.Add(new Employee(4, 30000, 2));
-            employee.Add(new Employee(5, 4000, 3));
+            employees.Add(new Employee(1, 30000, 2));
+            employees.Add(new Employee(2, 20000, 1));
+            employees.Add(new Employee(3, 5000, 3));
+            employees.Add(new Employee(4, 30000, 2));
+            employees.Add(new Employee(5, 4000, 3));
 
-            var Result = from value in employee
-                         where value.Salary >= 10000
-                         group value by value.Department into EmployeeGroup
+            var Result = from employee in employees
+                         where employee.Salary >= 10000
+                         group employee by employee.Department into EmployeeGroup
                          select new
                          {
                              count = EmployeeGroup.Count(),
