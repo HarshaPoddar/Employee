@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Employee_LinQ
 {
-
-
     class Employee
     {
         public int EmployeeID;
@@ -23,8 +21,6 @@ namespace Employee_LinQ
     }
     class Program
     {
-
-
         static void Main(string[] args)
         {
             List<Employee> employees = new List<Employee>(5);
@@ -43,9 +39,7 @@ namespace Employee_LinQ
                              count = EmployeeGroup.Count(),
                              key = EmployeeGroup.Key
                          };
-
-
-
+            
             foreach (var Answer in Result)
                 Console.WriteLine(Answer);
             Console.ReadKey();
